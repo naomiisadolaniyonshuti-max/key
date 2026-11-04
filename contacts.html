@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Home Key Real Estates for property enquiries, bookings, and customer support.">
+  <title>Contact | Home Key Real Estates</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <a class="logo" href="index.html" aria-label="Home Key Real Estates home">
+        <img src="image/homekey.png" alt="Home Key Real Estates">
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html" aria-current="page">Contacts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-intro">
+      <p class="eyebrow">Here to help</p>
+      <h1>Let’s find your place.</h1>
+      <p>Ask us about a property, a booking, or selling your home. Our team will be happy to help.</p>
+    </section>
+
+    <div class="contact-layout">
+      <section class="contact-panel" aria-labelledby="request-heading">
+        <h2 id="request-heading">Send an enquiry</h2>
+        <p>Complete the form and it will open a pre-filled email for you to send.</p>
+        <form id="contact-form">
+          <label for="name">Your name</label>
+          <input id="name" name="name" autocomplete="name" required>
+
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="request">How can we help?</label>
+          <textarea id="request" name="request" placeholder="Tell us what you’re looking for..." required></textarea>
+
+          <button type="submit">Continue to email</button>
+        </form>
+      </section>
+
+      <aside class="contact-panel" aria-labelledby="contact-details-heading">
+        <h2 id="contact-details-heading">Contact details</h2>
+        <ul class="contact-details">
+          <li>
+            <strong>General enquiries</strong>
+            <a href="mailto:homekey@realestate.com">homekey@realestate.com</a>
+          </li>
+          <li>
+            <strong>Complaints and support</strong>
+            <a href="mailto:support@yourhome.org">support@yourhome.org</a>
+          </li>
+          <li>
+            <strong>Booking Officer · Fidel Castrol</strong>
+            <a href="tel:0115810414">0115810414</a>
+          </li>
+          <li>
+            <strong>Support Assistant · Neema Atieno</strong>
+            <a href="tel:0701581401">0701581401</a>
+          </li>
+          <li>
+            <strong>Communications · Steph Oloh</strong>
+            <a href="tel:0703170022">0703170022</a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+
+    <section class="team" aria-labelledby="team-heading">
+      <p class="eyebrow">The people behind Home Key</p>
+      <h2 id="team-heading">Meet our team</h2>
+      <div class="team-grid">
+        <article class="team-member">
+          <h3>Naomi Isadola</h3>
+          <p class="role">Co-founder and CEO</p>
+        </article>
+        <article class="team-member">
+          <h3>Fidel Castrol</h3>
+          <p class="role">Booking Officer</p>
+          <p><a href="tel:0115810414">0115810414</a></p>
+        </article>
+        <article class="team-member">
+          <h3>Neema Atieno</h3>
+          <p class="role">Support Assistant Officer</p>
+          <p><a href="tel:0701581401">0701581401</a></p>
+        </article>
+        <article class="team-member">
+          <h3>Steph Oloh</h3>
+          <p class="role">Communication Officer</p>
+          <p><a href="tel:0703170022">0703170022</a></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Home Key Real Estates</p>
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const request = form.elements.request.value.trim();
+      const subject = encodeURIComponent("Website enquiry from " + name);
+      const body = encodeURIComponent(
+        "Name: " + name + "\nEmail: " + email + "\n\nEnquiry:\n" + request
+      );
+
+      window.location.href =
+        "mailto:homekey@realestate.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
